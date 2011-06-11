@@ -1,0 +1,61 @@
+Suntiger Algol 0.01 README
+--------------------------
+
+The Suntiger Algol compiler is distributed as 
+a set of pre-compiled Python modules, and the driver
+script 'suntiger.py'. The source files are located
+in the suntiger/src directory; any of the pre-compiled
+files will be re-constituted if the source files are run.
+There are a set of example Baby Algol programs in the
+suntiger/examples directory. Documentation is to be
+found in the suntiger/docs directory.
+
+The distribution comes as either a ZIP or a tarball. It
+should be extracted to a local directory where it can be 
+run from. The following files should be in the following
+directories:
+
+/suntiger:
+	CharBuffer.pyc
+	codegen.pyc
+	CompilerExceptions.pyc
+	labels.pyc
+	MasterSymbolTable.pyc
+	messages.pyc
+	read.me (this file)
+	StateMachine.pyc
+	st_parse.pyc
+	suntiger.py (main program)
+	Symbol.pyc
+	SymbolTable.pyc
+	tokens.pyc
+	typecheck.pyc
+
+/suntiger/src:
+	CharBuffer.py
+	codegen.py
+	CompilerExceptions.py
+	labels.py
+	MasterSymbolTable.py
+	messages.py
+	StateMachine.py
+	st_parse.py
+	suntiger.py
+	Symbol.py
+	SymbolTable.py
+	tokens.py
+	typecheck.py
+
+/suntiger/examples:
+	assign-test.al
+	empty.al
+	err-test.al
+	if-test.al
+	nesting-test.al
+	print-test.al
+	while-test.al
+
+/suntiger/docs:
+	Suntiger Algol 0.01.txt
+
+If there are any questions or problems, contact JosephOsako@gmail.com
