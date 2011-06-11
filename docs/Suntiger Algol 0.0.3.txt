@@ -1,0 +1,86 @@
+		Suntiger Algol 0.0.3
+		-------------------
+Joseph Osako 
+started 2008:06:13
+last modified 2011:07:11 J Osako
+
+Introduction
+------------
+Suntiger is a compiler for a dialect of the Baby Algol language
+defined in the CS4110 course for Spring 2008 at CSU East Bay by 
+Dr. Edna Reiter. The implementation was written by Joseph Osako
+in the Python language. The compiler produces code targetting the
+SPIM simulator, a simulated version of the MIPS processor.
+
+
+Installation
+-------------
+The compiler consists of a set of pre-compiled Python modules, and 
+a driver script, 'suntiger.py'. It is distributed as a direcotry
+archive, either a Zip file or a tarball. To install the program, 
+extract it to a given directory with the directory structure retained.
+
+
+Use
+---
+The Suntiger compiler is a command-line or shell program. It can be run
+in Windows or Unix as
+
+python suntiger.py <filename>
+
+where <filename> is the name of a Baby Algol file without any extension.
+The compiler requires that the files have the extension '.al', but that
+the extension not be included in the filename in the command line.
+
+In Unix-based systems, the suntiger.py script can also be run directly:
+
+./suntiger.py <filename>
+
+In order to use the script in this manner, it is first necessary to set
+the execution privileges for the script, as so:
+
+chmod +x suntiger.py
+
+After this the program should be runnable from the shell.
+
+
+Behavior
+--------
+The compiler will try to find a file named <filename>.al, and produces
+an assembly source file <filename>.s and a listing file <fliename.lis.
+
+For example, if you have a program 'test.al', you would run the compiler
+as
+
+python suntiger.py test
+
+This will compile the test.al file to a SPIM assembly source file named
+test.s and a listing file test.lis.
+
+The source file is a text file of SPIM assembly code, which can be run
+as with any SPIM program. Consult the SPIM manual for details on running
+the compiled program.
+
+The listing file consists of a formatted listing of the program, with all
+non-string elements converted to upper case and all comments removed. The
+compiler automatically formats the listed program. The code listing is
+followed by a listing of the symbol table for the program.
+
+If the compiler encounters a non-fatal error, it will print out a warning
+and attempt to continue compiling. The warning only appears in the standard
+output, not in the listing file.
+
+If a fatal error is encountered, the compiler will print the error message
+to both standard output and the listing, and will halt compiling. The symbol
+table as it is at the time of the error is written to the listing file after
+the error message. The output file is emptied but not removed. 
+
+
+Additional Credits
+--------
+Parts of the Suntiger code use the typecheck.py module written by
+Dimitri Dvoinikov <http://www.targeted.org/python/recipes/typecheck.py>
+for the purposes of adding type checking for function calls.
+
+
+

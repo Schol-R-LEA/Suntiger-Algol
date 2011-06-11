@@ -1,0 +1,28 @@
+Changes to be made to Suntiger:
+
+** rewrite st_parse to generate parse tree instead of emitting code.
+
+*** Add support for procedures, with both call by value and call by name
+(call by name should be the default).
+
+*** Add support for arrays.
+
+** Convert existing 'while' statement to a subset of the Algol-60
+'for' expression.
+
+* Change 'if' statements to support expressions (that is, they should
+return a value). Expression-syntax 'if' may or may not be different
+from statement-syntax 'if', depending on implementation pragmatics. 
+
+* Remove or re-write built-in I/O procedures.
+
+* Re-write options handling to use getopt or similar.
+
+*** Change code generation functions (or classes) to allow re-targeting.
+Should include a command-line switch to choose target.
+
+** Re-write code generation to eliminate redundant data and load/store
+operations.
+
+* Add optimization stage between parsing and code gen., and peephole
+optimization after code generation.
