@@ -7,8 +7,11 @@ script 'suntiger.py'. The source files are located
 in the Suntiger-Algol/src directory; any of the pre-compiled
 files will be re-constituted if the source files are run.
 There are a set of example Baby Algol programs in the
-Suntige-Algol/examples directory. Documentation is to be
+Suntiger-Algol/examples directory. Documentation is to be
 found in the Suntiger-Algol/docs directory.
+
+The current version is written primarily for Python 3, 
+but should be compatible with Python 2.6 or later.
 
 The distribution comes as either a ZIP or a tarball. It
 should be extracted to a local directory where it can be 
