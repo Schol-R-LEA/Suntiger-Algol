@@ -67,7 +67,7 @@ class State (object):
         characters; this allows a given state transition to give a set of
         possible matches (e.g., all alphanumeric characters) rather than
         requiring a separate key for each character. If this does not succeed,
-        it then checkes to see if there is a default state set. If none of these
+        it then checks to see if there is a default state set. If none of these
         find a match, the method returns an error state.
         
         If a successor is found, the method then checks to see if the successor
@@ -122,7 +122,7 @@ class StateMachine(object):
     the FSM is locked, new states may be added. The State machine begins
     in the Start state, and accepts input until it either accepts or rejects
     the input string. When it reaches one of these final states, it returns
-    the type of the recongized string and resets itself to the Start state.
+    the type of the recognized string and resets itself to the Start state.
    """
     def __init__(self, start_state):
         """ Constructor - create a FSM object.        
@@ -154,7 +154,7 @@ class StateMachine(object):
     
     def lock(self):
         """ Locks state table so no new states can be added."""
-        lock = True
+        self.__locked = True
         
 #    @returns(tuple)
     def transition(self, input) -> tuple:
