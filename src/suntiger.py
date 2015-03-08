@@ -1,8 +1,8 @@
 #!/usr/bin/python3
 
 # part of the Suntiger Algol project
-# initiated 2008:05:23, by Joseph Osako, Jr. <JoeJr@osakoweb.com>
-# file last modified 2010:01:11
+# initiated 2008:05:23, by Joseph Osako, Jr. <josephosako@gmail.com>
+# file last modified 2010:03:08
 
 from sys import argv, exit
 from io import StringIO
@@ -16,12 +16,12 @@ from MasterSymbolTable import MasterSymbolTable
 
 
 # development information about the program
-__authors__ = 'Joseph Osako, Jr. <JoeJr@osakoweb.com>'
+__authors__ = 'Joseph Osako, Jr. <josephosako@gmail.com>'
 __version__ = '0.0.3'
 __date__ = '2008:05:23'
-__modified__ = '2010:01:11'
+__modified__ = '2015:03:08'
 
-__copyright__ = """Suntiger Algol """ + __version__ + """ Copyright (c) 2010, """
+__copyright__ = """Suntiger Algol """ + __version__ + """ Copyright (c) 2008, 2015, """
 __copyright__ +=  """the Suntiger Group (""" + __authors__ + """, et al.) """
 __copyright__ +=  """All rights reserved."""
 __license__ = """Licensed under the OSI-BSD Open License. """
@@ -34,7 +34,7 @@ __credits__ += """for method typechecking.\n"""
 
 __dedication__ = """To Dr. Edie Reiter of CSU East Bay, for whose """
 __dedication__ += """Spring 2008 course on compiler design """
-__dedication__ += """and implementation this was originally written."""
+__dedication__ += """an implementation this was originally written."""
 
 
 if __name__ == "__main__":

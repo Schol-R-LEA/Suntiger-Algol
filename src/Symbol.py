@@ -1,8 +1,8 @@
 #!/usr/bin/python3
 
 # part of the Suntiger Algol project
-# initiated 2008:04:06, by Joseph Osako, Jr. <JoeJr@osakoweb.com>
-# file last modified 2010:01:11
+# initiated 2008:04:06, by Joseph Osako, Jr. <josephosako@gmail.com>
+# file last modified 2015:03:08
 
 from CompilerExceptions import KeywordException
 from typecheck import typecheck
