@@ -1,9 +1,6 @@
 # part of the Suntiger Algol project
-# initiated 2008:05:25, by Joseph Osako, Jr. <josephosako@gmail.com>
-# file last modified 2015:03:08
-
-from typecheck import *
-
+# initiated 2008:05:23, by Alice Osako <alicetrillianosako@gmail.com>
+# file last modified 2022:02:11
 
 class State (object):
     """ Class representing the states of a Finite State Automata.
@@ -47,9 +44,7 @@ class State (object):
         self.__transitions = transitions
         self.__pushback = pushback
     
-#    @takes("State", str)
-#    @returns(tuple)
-    @typecheck
+
     def next(self, input: str):
         """ Return the successive state based on the input character.
         
@@ -135,7 +130,6 @@ class StateMachine(object):
         self.__current_state = self.__states[State.START]
 
 
-    @typecheck
     def add(self, key: int, state: State):
         """ Add a new state to the state table.
         
@@ -156,7 +150,7 @@ class StateMachine(object):
         """ Locks state table so no new states can be added."""
         self.__locked = True
         
-#    @returns(tuple)
+
     def transition(self, input) -> tuple:
         """ Perform a state transition, and if it is a final
         state, return success or failure and the recognized token type. 

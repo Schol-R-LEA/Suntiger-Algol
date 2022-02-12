@@ -1,11 +1,10 @@
-#!/usr/bin/python3
+#!/usr/bin/python
 
 # part of the Suntiger Algol project
-# initiated 2008:04:06, by Joseph Osako, Jr. <josephosako@gmail.com>
-# file last modified 2015:03:08
+# initiated 2008:05:23, by Alice Osako <alicetrillianosako@gmail.com>
+# file last modified 2022:02:11
 
 from CompilerExceptions import KeywordException
-from typecheck import typecheck
 
 
 class Symbol(object):
@@ -15,7 +14,6 @@ class Symbol(object):
     instantiated. However, because Python does not support abstract
     classes (or interfaces), this is done on the honor system.
     """
-    @typecheck
     def __init__(self):
         """Contructor
         
@@ -23,7 +21,6 @@ class Symbol(object):
         """
         self.__name = None
  
-    @typecheck
     def __repr__(self) -> str:
         """Creates a string representation of the Symbol
         
@@ -38,7 +35,6 @@ class Symbol(object):
 class Identifier (Symbol):
     """Symbol table entry class for identifiers.
     """
-    @typecheck
     def __init__(self, name: str):
         """Constructor
         
@@ -48,14 +44,11 @@ class Identifier (Symbol):
         """
         self.__name = name
 
-        
-    @typecheck
     def getName(self) -> str:
         """Accessor for the symbol name"""
         return self.__name
 
         
-    @typecheck
     def __repr__(self) -> str:
         """Printable representation of an Identifier.
 
@@ -71,7 +64,6 @@ class Identifier (Symbol):
  
 
 class Constant(Identifier):
-    @typecheck
     def __init__(self, name: str, value: str, offset: int):
         """Constructor
         
@@ -83,7 +75,6 @@ class Constant(Identifier):
         self.__value = value
         self.__location = offset
 
-        @typecheck        
         def type(self) ->str:
             return "INT"
         
@@ -120,7 +111,6 @@ class Variable(Identifier):
 
 class SystemRoutine(Identifier):
 
-    @typecheck
     def __init__(self, name: str, code, argtype):
         super(SystemRoutine, self).__init__(name)
         self.__code = code

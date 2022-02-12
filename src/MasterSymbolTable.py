@@ -1,15 +1,12 @@
-#!/usr/bin/python3
+#!/usr/bin/python
 
 # part of the Suntiger Algol project
-# initiated 2008:04:06, by Joseph Osako, Jr. <josephosako@gmail.com>
-# file last modified 2015:03:08
+# initiated 2008:05:23, by Alice Osako <alicetrillianosako@gmail.com>
+# file last modified 2022:02:11
 
 from Symbol import Symbol
 from SymbolTable import SymbolTable
 from CompilerExceptions import *
-from typecheck import typecheck
-
-
 
 class MasterSymbolTable(object):
     """ Controller for a set of SymbolTables

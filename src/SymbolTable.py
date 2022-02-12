@@ -1,14 +1,11 @@
-#/usr/bin/python3
+#/usr/bin/python
 
 # part of the Suntiger Algol project
-# initiated 2008:05:23, by Joseph Osako, Jr. <josephosako@gmail.com>
-# file last modified 2015:03:08
-
+# initiated 2008:05:23, by Alice Osako <alicetrillianosako@gmail.com>
+# file last modified 2022:02:11
 
 from CompilerExceptions import DuplicateSymbolException
 from Symbol import Symbol, Identifier
-from typecheck import typecheck
-
 
 
 class SymbolTable(dict):
@@ -26,7 +23,6 @@ class SymbolTable(dict):
     each table has a (non-unique) text description which is used as
     a simple check against mismatches.
     """
-    @typecheck
     def __init__(self, parent = None, descr: str = "Top"):
         """Constructor
 
@@ -42,8 +38,6 @@ class SymbolTable(dict):
             parent.__children.append(self)
 
 
-    #@takes("SymbolTable", Symbol)
-    @typecheck
     def insert(self, sym: Symbol):
         """Add a symbol to the table.
         
@@ -66,7 +60,6 @@ class SymbolTable(dict):
             raise DuplicateSymbolException(key, self.__descr)
         
 
-    @typecheck
     def find(self, key: str):
         """Find a symbol in the table.
         

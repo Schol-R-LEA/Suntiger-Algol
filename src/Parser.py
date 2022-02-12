@@ -1,10 +1,9 @@
 
 # part of the Suntiger Algol project
-# initiated 2008:05:23, by Joseph Osako, Jr. <josephosako@gmail.com>
-# file last modified 2015:03:08
+# initiated 2008:05:23, by Alice Osako <alicetrillianosako@gmail.com>
+# file last modified 2022:02:11
 
 import sys, os
-from typecheck import typecheck
 from tokens import Token
 from labels import *
 from Symbol import *
@@ -25,7 +24,7 @@ class Parser(Object):
 
         The actual code for the function is below all of the sub-functions.
         """
-        symtab = st
+        self.__symtab = st
 
         def match(tok, toktype, lexeme = None):
             """ Match a token against a token type and an optional

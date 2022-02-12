@@ -1,7 +1,8 @@
+#!/usr/bin/python
 
 # part of the Suntiger Algol project
-# initiated 2008:05:23, by Joseph Osako, Jr. <josephosako@gmail.com>
-# file last modified 2015:03:08
+# initiated 2008:05:23, by Alice Osako <alicetrillianosako@gmail.com>
+# file last modified 2022:02:11
 
 import os, sys
 from io import TextIOWrapper
@@ -9,12 +10,10 @@ from Symbol import *
 from labels import lits
 from tokens import Token
 from SymbolTable import SymbolTable
-from typecheck import typecheck
 
 symtab = None
 out = None
 
-@typecheck
 def codegen(st, dest: TextIOWrapper):
 	global symtab, out, lits
 	symtab = st

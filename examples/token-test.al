@@ -28,8 +28,8 @@ BEGIN
       od;
    fi;
 
-"Goodybe,
-Cruel Worlfd!"
+"Goodbye,
+Cruel World!"
 
    e : = FALSE;
    f = 'a'

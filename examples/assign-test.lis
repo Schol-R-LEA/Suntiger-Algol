@@ -1,0 +1,60 @@
+   1: BEGIN 
+   2:    INT A ; 
+   3:    CHAR B ; 
+   4:    BOOLEAN CCC ; 
+   5:    STRING D ; 
+   6:    A := 1 ; 
+   7:    B := 'A' ; 
+   8:    CCC := FALSE ; 
+   9:    D := "Hello, World!" ; 
+  10:    PRINTI ( A ) ; 
+  11:    PRINTLN ( ) ; 
+  12:    PRINTC ( B ) ; 
+  13:    PRINTLN ( ) ; 
+  14:    PRINTS ( D ) ; 
+  15:    PRINTLN ( ) ; 
+  16:    PRINTB ( CCC ) ; 
+  17:    PRINTLN ( ) ; 
+  18:    PRINTB ( 1 == 1 ) ; 
+  19:    PRINTLN ( ) ; 
+  20:    PRINTB ( 1 == 2 ) ; 
+  21:    PRINTLN ( ) ; 
+  22:    PRINTB ( 1 != 1 ) ; 
+  23:    PRINTLN ( ) ; 
+  24:    PRINTB ( 1 != 2 ) ; 
+  25:    PRINTLN ( ) ; 
+  26:    PRINTB ( 1 < 2 ) ; 
+  27:    PRINTLN ( ) ; 
+  28:    PRINTB ( 1 > 2 ) ; 
+  29:    PRINTLN ( ) ; 
+  30:    PRINTB ( 1 == 1 && 2 < 3 ) ; 
+  31:    PRINTLN ( ) ; 
+  32:    PRINTI ( 10 * 2 ) ; 
+  33:    PRINTLN ( ) ; 
+  34:    A := 6 / 3 ; 
+  35:    PRINTI ( A ) ; 
+  36:    PRINTLN ( ) ; 
+  37:    A := A + 42 ; 
+  38:    PRINTI ( A ) ; 
+  39:    PRINTLN ( ) ; 
+  40:    A := A - 23 ; 
+  41:    PRINTB ( A == 21 ) ; 
+  42:    PRINTLN ( ) ; 
+  43:    PRINTI ( A + ( 2 * 3 * A ) + A / 2 ) ; 
+  45: END  
+
+
+Top:
+PRINTLN - type: SystemRoutine, name: PRINTLN
+PRINTI - type: SystemRoutine, name: PRINTI
+PRINTC - type: SystemRoutine, name: PRINTC
+PRINTS - type: SystemRoutine, name: PRINTS
+PRINTB - type: SystemRoutine, name: PRINTB
+
+Top.block2:
+A - type: Variable, name: A, vartype: INT, location: -24
+B - type: Variable, name: B, vartype: CHAR, location: -28
+CCC - type: Variable, name: CCC, vartype: BOOLEAN, location: -32
+D - type: Variable, name: D, vartype: STRING, location: -36
+
+9 symbols in 2 blocks

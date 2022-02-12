@@ -1,10 +1,8 @@
 
 # part of the Suntiger Algol project
-# initiated 2008:05:23, by Joseph Osako, Jr. <josephosako@gmail.com>
-# file last modified 2015:03:08
+# initiated 2008:05:23, by Alice Osako <alicetrillianosako@gmail.com>
+# file last modified 2022:02:11
 
-
-from typecheck import typecheck
 from tokens import Token
 
 
@@ -25,7 +23,6 @@ def addlit(tok):
 	return label
 
 
-@typecheck
 def get_label(brtype: str) -> str:
 	global label_count
 	label = brtype + '.' + str(label_count)

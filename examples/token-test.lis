@@ -1,0 +1,32 @@
+   1: BEGIN 
+   4:    INT A ; 
+   5:    INTCONST B := 4 ; 
+   6:    INT C ; 
+   7:    BOOLEAN D ; 
+   8:    BOOLEAN E ; 
+   9:    CHAR F ; 
+  10:    STRING G ; 
+  11:    A := 2 + 2 ; 
+  12:    C := 42 * 23 ; 
+  13:    D := A < B 
+
+***ERROR line 13: IDENT(b) not declared in this scope.***
+
+
+Top:
+PRINTLN - type: SystemRoutine, name: PRINTLN
+PRINTI - type: SystemRoutine, name: PRINTI
+PRINTC - type: SystemRoutine, name: PRINTC
+PRINTS - type: SystemRoutine, name: PRINTS
+PRINTB - type: SystemRoutine, name: PRINTB
+
+Top.block2:
+A - type: Variable, name: A, vartype: INT, location: -24
+B - type: Constant, name: B
+C - type: Variable, name: C, vartype: INT, location: -32
+D - type: Variable, name: D, vartype: BOOLEAN, location: -36
+E - type: Variable, name: E, vartype: BOOLEAN, location: -40
+F - type: Variable, name: F, vartype: CHAR, location: -44
+G - type: Variable, name: G, vartype: STRING, location: -48
+
+12 symbols in 2 blocks

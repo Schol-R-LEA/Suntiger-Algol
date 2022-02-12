@@ -1,8 +1,8 @@
 #!/usr/bin/python3
 
 # part of the Suntiger Algol project
-# initiated 2008:05:23, by Joseph Osako, Jr. <josephosako@gmail.com>
-# file last modified 2010:03:08
+# initiated 2008:05:23, by Alice Osako <alicetrillianosako@gmail.com>
+# file last modified 2022:02:11
 
 from sys import argv, exit
 from io import StringIO
@@ -16,16 +16,15 @@ from MasterSymbolTable import MasterSymbolTable
 
 
 # development information about the program
-__authors__ = 'Joseph Osako, Jr. <josephosako@gmail.com>'
+__authors__ = 'Alice Osako <alicetrillianosako@gmail.com>'
 __version__ = '0.0.3'
 __date__ = '2008:05:23'
-__modified__ = '2015:03:08'
+__modified__ = '2022:02:11'
 
-__copyright__ = """Suntiger Algol """ + __version__ + """ Copyright (c) 2008, 2015, """
-__copyright__ +=  """the Suntiger Group (""" + __authors__ + """, et al.) """
-__copyright__ +=  """All rights reserved."""
-__license__ = """Licensed under the OSI-BSD Open License. """
-__license__ += """See the file suntiger/docs/LICENSE for license details."""
+__copyright__ = """Suntiger Algol """ + __version__ + """ Copyright (c) 2008, 2022 the Suntiger Group (""" + __authors__ + """, et al.)
+All rights reserved."""
+__license__ = """Licensed under the OSI-BSD Open License.
+See the file suntiger/docs/LICENSE for license details."""
 
 __credits__ = """Uses Dimitri Dvoinikov's typecheck decorator library """
 __credits__ += """<http://www.targeted.org/python/recipes/typecheck.py>\n"""
