@@ -12,10 +12,10 @@ from MasterSymbolTable import *
 
 class Parser(Object):
 
-    def __init__(src, out, listing, symtab, warning, error, emit, load, store):
+    def __init__(self, src, out, listing, symtab, warning, error, emit, load, store):
         self.__symtab = None
 
-    def parse(src, out, print_listing, st, warning, error, emit, load, store):
+    def parse(self, src, out, print_listing, st, warning, error, emit, load, store):
             """ parse() - the main parsing function.
 
         This function serves as an outer scope for the functions
@@ -86,10 +86,10 @@ class Parser(Object):
                 if semitok not in finals:
                     endtok = match(semitok, Token.SEMI)
                     return stats(endtok)
-    else:
-        return semitok
-    else:   # stats -> NULL
-        return tok
+                else:
+                    return semitok
+                else:   # stats -> NULL
+                    return tok
 
 
         def statmnt(tok):
@@ -108,18 +108,18 @@ class Parser(Object):
                 closetok = cont(tok)
                 free_temps()
                 return closetok
-    else:           # statmnt ->
-        error(tok, "statement expected.")
+            else:           # statmnt ->
+                error(tok, "statement expected.")
 
         def decl(tok):
             if tok.type() == Token.INTCONSTTOK:     # decl -> constdecl
                 closetok = constdecl(tok)
                 return closetok
-    elif tok.type() == Token.BASICTYPETOK:
-        closetok = vardecl(tok)         # decl -> vardecl
-        return closetok
-    else:
-        error(tok, "Declaration expected.")
+            elif tok.type() == Token.BASICTYPETOK:
+                closetok = vardecl(tok)         # decl -> vardecl
+                return closetok
+            else:
+                error(tok, "Declaration expected.")
 
         def constdecl(tok):
             global symtab, currOffset
@@ -172,47 +172,47 @@ class Parser(Object):
                 closetok, etype, elocation = expression(exprtok)
                 if not isinstance(sym, Variable):
                     error(target, " not a valid l-value.")
-    elif etype == "STRING":
-        emit('la $t0, ' + elocation)
-        emit('sw $t0, ' + str(sym.location()) + '($sp)')
-    else:
-        load('$t1', elocation, etype)
-        store('$t1', sym.location(), etype)
-        return closetok
-    else:
-        # moreid -> PAREN expression PAREN
-        exprtok = match(tok, Token.PAREN, '(')
+                elif etype == "STRING":
+                    emit('la $t0, ' + elocation)
+                    emit('sw $t0, ' + str(sym.location()) + '($sp)')
+                else:
+                    load('$t1', elocation, etype)
+                    store('$t1', sym.location(), etype)
+                    return closetok
+                else:
+                    # moreid -> PAREN expression PAREN
+                    exprtok = match(tok, Token.PAREN, '(')
 
-                if isinstance(sym, SystemRoutine):
-                    if sym.getName() == "PRINTLN":
-                        code = sym.code(None)
-                        out.write(code)
-                        rpartok = exprtok
-    else:
-        rpartok, etype, elocation = expression(exprtok)
-        code = sym.code(etype)
-        if not code:
-            error(exprtok, " does not take " + etype + " arguments")
-    else:
-        if etype in ["INT", "BOOLEAN"]:
-            load('$a0', elocation, etype)
-    elif etype == 'CHAR':
-        load('$t1', elocation, etype)
-        emit('sb $t1, charSwap')
-        emit('la $a0, charSwap')
-    elif etype == "STRING":
-        if isinstance(elocation, int):
-            emit('lw $a0, ' + str(elocation) + '($sp)')
-    elif elocation[0] == '$':
-        emit('move $a0, ' + elocation)
-    else:
-        emit('la $a0, ' + elocation)
+                            if isinstance(sym, SystemRoutine):
+                                if sym.getName() == "PRINTLN":
+                                    code = sym.code(None)
+                                    out.write(code)
+                                    rpartok = exprtok
+                else:
+                    rpartok, etype, elocation = expression(exprtok)
+                    code = sym.code(etype)
+                    if not code:
+                        error(exprtok, " does not take " + etype + " arguments")
+                else:
+                    if etype in ["INT", "BOOLEAN"]:
+                        load('$a0', elocation, etype)
+                elif etype == 'CHAR':
+                    load('$t1', elocation, etype)
+                    emit('sb $t1, charSwap')
+                    emit('la $a0, charSwap')
+                elif etype == "STRING":
+                    if isinstance(elocation, int):
+                        emit('lw $a0, ' + str(elocation) + '($sp)')
+                elif elocation[0] == '$':
+                    emit('move $a0, ' + elocation)
+                else:
+                    emit('la $a0, ' + elocation)
 
-                            out.write(code)
-                            closetok = match(rpartok, Token.PAREN, ')')
-                            return closetok
+                    out.write(code)
+                    closetok = match(rpartok, Token.PAREN, ')')
+                    return closetok
 
-            error(exprtok, " not found.")
+                error(exprtok, " not found.")
 
 
         def ifstat(tok):
@@ -415,7 +415,7 @@ class Parser(Object):
         return closetok, sym_entry.type(), sym_entry.location()
 
 
-        # main parse function initializer
+    # main parse function initializer
     symtab.insert(SystemRoutine("PRINTLN",
                                 "\tla $a0, nl\n\tli $v0, 4\n\tsyscall\n",
                                 [None]))

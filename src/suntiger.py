@@ -26,10 +26,6 @@ All rights reserved."""
 __license__ = """Licensed under the OSI-BSD Open License.
 See the file suntiger/docs/LICENSE for license details."""
 
-__credits__ = """Uses Dimitri Dvoinikov's typecheck decorator library """
-__credits__ += """<http://www.targeted.org/python/recipes/typecheck.py>\n"""
-__credits__ += """for method typechecking.\n"""
-
 
 __dedication__ = """To Dr. Edie Reiter of CSU East Bay, for whose """
 __dedication__ += """Spring 2008 course on compiler design """
@@ -38,16 +34,19 @@ __dedication__ += """an implementation this was originally written."""
 
 if __name__ == "__main__":
     global symtab
+    if len(argv) <= 1:
+        print("usage: suntiger <filename>")
+        exit(1)
     if argv[1] == "--credits":
-        print (__copyright__ + __license__ + '\n\n' + __credits__)
+        print (__copyright__ + __license__)
         exit(0)
 
     elif argv[1] == "--version":
-        print(__version__ + '\n')
+        print(__version__)
         exit(0)
 
     elif argv[1] == "--dedication":
-        print(__dedication__ + '\n')
+        print(__dedication__)
         exit(0)
 
     elif len(argv) != 2:
